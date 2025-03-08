@@ -1,12 +1,10 @@
-# 🚀 Random Password Generator + Strength Checker (Python + Streamlit)
-
 import random
 import string
 import re
 import streamlit as st
 from io import StringIO
 
-# 🎨 Custom Styling
+# 🌈 Custom Styling
 st.markdown(
     """
     <style>
@@ -121,7 +119,7 @@ if generate_button:
         password = generate_password(length, use_upper, use_lower, use_digits, use_symbols, min_upper, min_digits, min_symbols)
         if password:
             st.code(password, language='plaintext')
-            st.button("📋 Copy to Clipboard")
+            st.button("📋 Copy to Clipboard", key=f"copy_button_{i}")
             check_password_strength(password)
             password_history.append(password)
             st.markdown("---")
@@ -140,4 +138,6 @@ st.markdown("""
     👩‍💻 **Created by Syeda Farzana Shah**  
     💡 *Empowering security, one password at a time.*
     """)
+
+
 
